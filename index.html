@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main>
+      <div class="painelImc">
+        <div class="title"> Calculadora - IMC </div>
+        <div class="inputs">
+            <label>Nome:</label>
+            <input type="text" id='nome'>
+        </div>
+        <div class="inputs">
+            <label>Altura:</label>
+            <span id="valorRange">0</span>
+            <input type="range" name="" id='altura' value="0" step="0.01" min="0" max="2.50" onchange="slideRange(this.value)">
+            <script type="text/javascript">
+                function slideRange(value){
+                        document.getElementById('valorRange').innerHTML = value;
+                    }
+            </script>
+        </div>
+        <div class="inputs">
+            <label>Peso:</label>
+            <span id="rangeValue">0</span>
+            <input type="range" name="" id='peso' value="0" min="0" max="200" onchange="rangeSlide(this.value)">
+            <script type="text/javascript">
+                function rangeSlide(value){
+                        document.getElementById('rangeValue').innerHTML = value;
+                    }
+            </script>
+        </div>
+        <button id='calcular'>Calcular</button>
+
+        <div class="result" id='resultado'></div>
+      </div>
+    </main>
+    <script src="projetoImc.js"></script>
+  </body>
+</html>
